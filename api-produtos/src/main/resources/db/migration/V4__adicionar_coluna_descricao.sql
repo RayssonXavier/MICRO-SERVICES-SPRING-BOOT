@@ -1,0 +1,1 @@
+alter table produtos.produto add column descricao varchar (250) not null; 
