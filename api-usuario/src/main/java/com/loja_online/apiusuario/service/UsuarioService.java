@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.loja_online.apiusuario.dto.UsuarioDto;
+import com.loja_online.apiusuario.exception.UsuarioNotFoundException;
 import com.loja_online.apiusuario.model.Usuario;
 import com.loja_online.apiusuario.repository.UsuarioRepository;
 
@@ -27,7 +28,10 @@ public class UsuarioService {
 
     public UsuarioDto obterPeloCpf(String cpf) {
         var usuario = this.repository.findByCpf(cpf);
-        return UsuarioDto.convert(usuario);
+        if(usuario != null) {
+            return UsuarioDto.convert(usuario);
+        }
+       throw new UsuarioNotFoundException();
     }
 
     public UsuarioDto obterPeloId(long id) {
@@ -35,7 +39,7 @@ public class UsuarioService {
         if(usuario.isPresent()) {
             return UsuarioDto.convert(usuario.get());
         }
-        return null;
+        throw new UsuarioNotFoundException();
     }
 
     public UsuarioDto salvar(UsuarioDto usuarioDto) {
@@ -50,7 +54,7 @@ public class UsuarioService {
             return UsuarioDto.convert(usuario.get());
         }
 
-        return null;
+        throw new UsuarioNotFoundException();
     }
 
     public List<UsuarioDto> filtroPelaParteNome(String nome) {
