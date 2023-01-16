@@ -1,5 +1,6 @@
 package com.loja.online.shopping.api.dto;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -7,6 +8,9 @@ import java.util.stream.Collectors;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.loja.online.shopping.api.model.Shop;
 
 import lombok.Data;
@@ -29,7 +33,7 @@ public class ShopDto {
         shopDto.setTotal(shop.getTotal());
         shopDto.setItems(
             shop.getItems()
-            .stream().map(ItemDto::convert).collect(Collectors.toList());
+            .stream().map(ItemDto::convert).collect(Collectors.toList())
         );
 
         return shopDto;

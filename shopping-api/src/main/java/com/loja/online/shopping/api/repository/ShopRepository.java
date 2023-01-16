@@ -1,5 +1,6 @@
 package com.loja.online.shopping.api.repository;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -12,5 +13,5 @@ import com.loja.online.shopping.api.model.Shop;
 public interface ShopRepository extends JpaRepository<Shop, Long> {
     public List<Shop> findAllByIdentificadorUsuario(String identificadoUsuario);
     public List<Shop> findAllByTotalGreaterThan(Float total);
-    public List<Shop> findAllByDataGreaterThanEquals(LocalDateTime data);
+    public List<Shop> findAllByDataGreaterThanEqual(LocalDateTime data);
 }
