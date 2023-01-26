@@ -1,8 +1,8 @@
-package com.lojaonlineapiprodutos.dto;
+package com.loja.online.api.dto;
 
 import javax.validation.constraints.NotNull;
 
-import com.lojaonlineapiprodutos.model.Categoria;
+import com.loja.online.api.model.Categoria;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

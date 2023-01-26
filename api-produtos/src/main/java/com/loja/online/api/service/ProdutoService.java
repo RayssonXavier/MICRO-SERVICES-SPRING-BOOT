@@ -1,4 +1,4 @@
-package com.lojaonlineapiprodutos.service;
+package com.loja.online.api.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,12 +6,12 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.lojaonlineapiprodutos.dto.ProdutoDto;
-import com.lojaonlineapiprodutos.exception.CategoriaNotFoundException;
-import com.lojaonlineapiprodutos.exception.ProdutoNotFoundException;
-import com.lojaonlineapiprodutos.model.Produto;
-import com.lojaonlineapiprodutos.repository.CategoriaRepository;
-import com.lojaonlineapiprodutos.repository.ProdutoRepository;
+import com.loja.online.api.dto.ProdutoDto;
+import com.loja.online.api.exception.CategoriaNotFoundException;
+import com.loja.online.api.exception.ProdutoNotFoundException;
+import com.loja.online.api.model.Produto;
+import com.loja.online.api.repository.CategoriaRepository;
+import com.loja.online.api.repository.ProdutoRepository;
 
 @Service
 public class ProdutoService {

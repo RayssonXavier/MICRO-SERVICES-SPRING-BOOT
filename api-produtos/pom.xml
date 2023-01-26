@@ -8,7 +8,7 @@
 		<version>2.6.13</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.loja-online-apiprodutos</groupId>
+	<groupId>com.loja.online.api</groupId>
 	<artifactId>api-produtos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>api-produtos</name>

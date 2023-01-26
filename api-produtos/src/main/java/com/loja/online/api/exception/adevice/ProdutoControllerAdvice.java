@@ -1,9 +1,8 @@
-package com.lojaonlineapiprodutos.exception.adevice;
+package com.loja.online.api.exception.adevice;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-import org.springframework.boot.context.properties.bind.BindResult;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -13,8 +12,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.lojaonlineapiprodutos.dto.ErroDto;
-import com.lojaonlineapiprodutos.exception.ProdutoNotFoundException;
+import com.loja.online.api.dto.ErroDto;
+import com.loja.online.api.exception.ProdutoNotFoundException;
 
 @ControllerAdvice(basePackages = "com.lojaonlineapiprodutos.controller")
 public class ProdutoControllerAdvice {

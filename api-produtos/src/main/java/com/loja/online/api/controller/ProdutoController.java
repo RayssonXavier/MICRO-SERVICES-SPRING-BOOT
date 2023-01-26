@@ -1,4 +1,4 @@
-package com.lojaonlineapiprodutos.controller;
+package com.loja.online.api.controller;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lojaonlineapiprodutos.dto.ProdutoDto;
-import com.lojaonlineapiprodutos.exception.ProdutoNotFoundException;
-import com.lojaonlineapiprodutos.service.ProdutoService;
+import com.loja.online.api.dto.ProdutoDto;
+import com.loja.online.api.exception.ProdutoNotFoundException;
+import com.loja.online.api.service.ProdutoService;
 
 @RestController
 public class ProdutoController {

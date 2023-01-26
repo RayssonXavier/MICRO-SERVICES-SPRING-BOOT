@@ -1,4 +1,4 @@
-package com.lojaonlineapiprodutos.dto;
+package com.loja.online.api.dto;
 
 import java.time.LocalDateTime;
 

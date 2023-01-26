@@ -1,4 +1,4 @@
-package com.lojaonlineapiprodutos;
+package com.loja.online.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

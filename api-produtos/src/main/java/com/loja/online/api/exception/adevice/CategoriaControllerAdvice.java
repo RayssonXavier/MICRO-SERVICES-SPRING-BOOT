@@ -1,4 +1,4 @@
-package com.lojaonlineapiprodutos.exception.adevice;
+package com.loja.online.api.exception.adevice;
 
 import java.time.LocalDateTime;
 
@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.lojaonlineapiprodutos.dto.ErroDto;
-import com.lojaonlineapiprodutos.exception.CategoriaNotFoundException;
+import com.loja.online.api.dto.ErroDto;
+import com.loja.online.api.exception.CategoriaNotFoundException;
+
+
 
 @ControllerAdvice(basePackages = "com.lojaonlineapiprodutos.controller")
 public class CategoriaControllerAdvice {
