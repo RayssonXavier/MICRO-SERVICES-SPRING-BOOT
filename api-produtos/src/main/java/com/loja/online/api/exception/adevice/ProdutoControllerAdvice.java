@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.loja.online.api.dto.ErroDto;
 import com.loja.online.api.exception.ProdutoNotFoundException;
+import com.shopping.client.DTO.ErroDto;
 
-@ControllerAdvice(basePackages = "com.lojaonlineapiprodutos.controller")
+@ControllerAdvice(basePackages = "com.loja.online.api.controller")
 public class ProdutoControllerAdvice {
     
     @ResponseBody
@@ -24,8 +24,8 @@ public class ProdutoControllerAdvice {
     public ErroDto produtoNotFound(ProdutoNotFoundException produtoNotFoundException) {
         ErroDto erroDto = new ErroDto();
         erroDto.setStatus(HttpStatus.NOT_FOUND.value());
-        erroDto.setMessagem("Produto não encontrado");
-        erroDto.setTimestamp(LocalDateTime.now());
+        erroDto.setMessage("Produto não encontrado");
+        erroDto.setTimestamp(LocalDateTime.now().toString());
         return erroDto;
     }
 
@@ -45,8 +45,8 @@ public class ProdutoControllerAdvice {
         });
 
         erroDto.setStatus(HttpStatus.BAD_REQUEST.value());
-        erroDto.setMessagem(sb.toString());
-        erroDto.setTimestamp(LocalDateTime.now());
+        erroDto.setMessage(sb.toString());
+        erroDto.setTimestamp(LocalDateTime.now().toString());
 
         return erroDto;
     }

@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.loja.online.api.dto.ErroDto;
 import com.loja.online.api.exception.CategoriaNotFoundException;
+import com.shopping.client.DTO.ErroDto;
 
 
 
@@ -23,8 +23,8 @@ public class CategoriaControllerAdvice {
         ErroDto erroDto = new ErroDto();
 
         erroDto.setStatus(HttpStatus.NOT_FOUND.value());
-        erroDto.setMessagem("Categoria não encontrada");
-        erroDto.setTimestamp(LocalDateTime.now());
+        erroDto.setMessage("Categoria não encontrada");
+        erroDto.setTimestamp(LocalDateTime.now().toString());
 
         return erroDto;
     }

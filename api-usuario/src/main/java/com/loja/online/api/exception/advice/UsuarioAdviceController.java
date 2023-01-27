@@ -2,7 +2,7 @@ package com.loja.online.api.exception.advice;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+import com.shopping.client.DTO.ErroDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -12,10 +12,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.loja.online.api.dto.ErroDto;
 import com.loja.online.api.exception.UsuarioNotFoundException;
 
-@RestControllerAdvice(basePackages = "com.loja_online.apiusuario")
+@RestControllerAdvice(basePackages = "com.loja.online.api.controller")
 public class UsuarioAdviceController {
     
     @ResponseBody
@@ -24,9 +23,8 @@ public class UsuarioAdviceController {
     public ErroDto usuarioNotFound(UsuarioNotFoundException ex) {
         ErroDto erroDto = new ErroDto();
         erroDto.setStatus(HttpStatus.NOT_FOUND.value());
-        erroDto.setMensagem("Usuario não encontrado");
-        erroDto.setTimestamp(LocalDateTime.now());
-
+        erroDto.setMessage("Usuario não encontrado");
+        erroDto.setTimestamp(LocalDateTime.now().toString());
         return erroDto;
     }
    
@@ -46,8 +44,8 @@ public class UsuarioAdviceController {
             sb.append(fieldErro.getField());
         });
         erroDto.setStatus(HttpStatus.BAD_REQUEST.value());
-        erroDto.setMensagem(sb.toString());
-        erroDto.setTimestamp(LocalDateTime.now());
+        erroDto.setMessage(sb.toString());
+        erroDto.setTimestamp(LocalDateTime.now().toString());
 
         return erroDto;
     }

@@ -50,6 +50,12 @@
 			<artifactId>flyway-core</artifactId>
 		</dependency>
 		
+		<dependency>
+			<groupId>com.shopping.client</groupId>
+			<artifactId>shopping-client</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
 	   </dependencies>
 
 	<build>

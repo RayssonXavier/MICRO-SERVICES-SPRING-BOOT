@@ -1,0 +1,17 @@
+com\loja\online\api\repository\ReportRepository.class
+com\loja\online\api\ShoppingApiApplication.class
+com\loja\online\api\dto\ShopDto.class
+com\loja\online\api\repository\ShopRepository.class
+com\loja\online\api\model\Shop.class
+com\loja\online\api\controller\ShopController.class
+com\loja\online\api\dto\ConvertDto.class
+com\loja\online\api\exceptions\UsuarioNotFoundException.class
+com\loja\online\api\service\ProdutoService.class
+com\loja\online\api\dto\ItemDto.class
+com\loja\online\api\repository\implementations\ReportRepositoryImpl.class
+com\loja\online\api\exceptions\advice\ShopControllerAdvice.class
+com\loja\online\api\dto\ErroDto.class
+com\loja\online\api\model\ShopReportDto.class
+com\loja\online\api\service\UsuarioService.class
+com\loja\online\api\model\Item.class
+com\loja\online\api\service\ShopService.class

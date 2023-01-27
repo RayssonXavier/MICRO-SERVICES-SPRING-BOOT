@@ -1,6 +1,7 @@
 package com.loja.online.api.controller;
 
 import com.loja.online.api.dto.ShopDto;
+import com.loja.online.api.exceptions.UsuarioNotFoundException;
 import com.loja.online.api.service.ShopService;
 import com.loja.online.api.service.UsuarioService;
 import com.shopping.client.DTO.UsuarioDto;
@@ -41,7 +42,7 @@ public class ShopController {
     }
 
     @PostMapping("/shopping")
-    public ShopDto salvar(@RequestBody ShopDto shopDto) {
+    public ShopDto salvar(@RequestBody ShopDto shopDto) throws UsuarioNotFoundException {
         return this.service.salvar(shopDto);
     }
 
