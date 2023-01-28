@@ -24,6 +24,7 @@ public class Usuario {
     private String email;
     private String telefone;
     private LocalDate dataCadastro;
+    private String chave;
 
     public static Usuario convert(UsuarioDto usuarioDto) {
         Usuario user = new Usuario();
@@ -33,6 +34,7 @@ public class Usuario {
         user.setEmail(usuarioDto.getEmail());
         user.setTelefone(usuarioDto.getTelefone());
         user.setDataCadastro(usuarioDto.getDataCadastro());
+        user.setChave(usuarioDto.getChave());
         return user;
     }
        

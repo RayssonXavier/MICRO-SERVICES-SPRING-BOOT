@@ -1,6 +1,7 @@
 package com.loja.online.api.service;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,8 @@ public class UsuarioService {
         .collect(Collectors.toList());
     }
 
-    public UsuarioDto obterPeloCpf(String cpf) {
-        var usuario = this.repository.findByCpf(cpf);
+    public UsuarioDto obterPeloCpf(String cpf, String chave ) {
+        var usuario = this.repository.findByCpfAndChave(cpf, chave);
         if(usuario != null) {
             return UsuarioDto.convert(usuario);
         }
@@ -42,6 +43,7 @@ public class UsuarioService {
     }
 
     public UsuarioDto salvar(UsuarioDto usuarioDto) {
+        usuarioDto.setChave(UUID.randomUUID().toString());
         var usuario = this.repository.save(Usuario.convert(usuarioDto));
         return UsuarioDto.convert(usuario);
     }

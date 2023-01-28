@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
 import org.springframework.web.client.RestTemplate;
-
+import org.springframework.web.util.UriComponentsBuilder;
 
 import com.google.gson.Gson;
 
@@ -23,10 +23,13 @@ public class UsuarioService {
     @Autowired
     Gson gson;
 
-    public UsuarioDto obterPorCpf(String cpf) {
+    public final String BASE_URL = "http://localhost:8080/usuario/cpf/";
+    public UsuarioDto obterPorCpf(String cpf, String chave) {
         try {
-            var url = "http://localhost:8080/usuario/cpf/"+cpf;
-            var resposnse = this.restTemplate.getForEntity(url, UsuarioDto.class);
+            
+            var url = UriComponentsBuilder.fromHttpUrl(this.BASE_URL + cpf);
+            url.queryParam("chave", chave).build();
+            var resposnse = this.restTemplate.getForEntity(url.toUriString(), UsuarioDto.class);
             return resposnse.getBody();
         } catch (HttpClientErrorException e) {
             ErroDto erro = this.gson.fromJson(e.getResponseBodyAsString(), ErroDto.class);

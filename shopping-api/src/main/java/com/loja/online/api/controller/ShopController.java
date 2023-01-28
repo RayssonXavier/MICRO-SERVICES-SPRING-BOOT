@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -42,8 +43,8 @@ public class ShopController {
     }
 
     @PostMapping("/shopping")
-    public ShopDto salvar(@RequestBody ShopDto shopDto) throws UsuarioNotFoundException {
-        return this.service.salvar(shopDto);
+    public ShopDto salvar(@RequestHeader(name = "chave", required = true) String chave, @RequestBody ShopDto shopDto) throws UsuarioNotFoundException {
+        return this.service.salvar(shopDto, chave);
     }
 
     @GetMapping("/shopping/search")
@@ -58,8 +59,4 @@ public class ShopController {
         return this.service.obterShopDoFiltro(dataInicio, dataFim, valorMinimo);
     }
 
-    @GetMapping("/usuario/cpf/{cpf}")
-    public UsuarioDto obterUsuario(@PathVariable ("cpf") String cpf) {
-        return this.usuarioService.obterPorCpf(cpf);
-    }
 }

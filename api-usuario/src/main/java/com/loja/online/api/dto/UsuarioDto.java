@@ -22,6 +22,8 @@ public class UsuarioDto {
     @NotBlank
     private String telefone;
 
+    private String chave;
+
     private LocalDate dataCadastro = LocalDate.now(); 
 
     public static UsuarioDto convert(Usuario user) {
@@ -32,6 +34,7 @@ public class UsuarioDto {
         userDTO.setEmail(user.getEmail());
         userDTO.setTelefone(user.getTelefone());
         userDTO.setDataCadastro(user.getDataCadastro());
+        userDTO.setChave(user.getChave());
         return userDTO;
     }
 }

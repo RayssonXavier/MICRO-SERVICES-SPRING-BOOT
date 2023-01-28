@@ -36,8 +36,9 @@ public class ApiUsuarioController {
     }
 
     @GetMapping("/usuario/cpf/{cpf}")
-    public UsuarioDto obsterPeloCpf(@PathVariable String cpf) throws UsuarioNotFoundException{
-        return this.service.obterPeloCpf(cpf);
+    public UsuarioDto obsterPeloCpf(@PathVariable String cpf, 
+        @RequestParam(name ="chave", required = true) String chave ) throws UsuarioNotFoundException{
+        return this.service.obterPeloCpf(cpf, chave);
     }
 
     @PostMapping("/usuario")

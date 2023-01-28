@@ -52,9 +52,9 @@ public class ShopService {
         return null;
     }
 
-    public ShopDto salvar(ShopDto shopDto) throws UsuarioNotFoundException {
+    public ShopDto salvar(ShopDto shopDto, String chave) throws UsuarioNotFoundException {
         this.usuarioService
-            .obterPorCpf(shopDto.getIdentificadorUsuario());
+            .obterPorCpf(shopDto.getIdentificadorUsuario(), chave );
 
         this.atribuirPrecoItens(shopDto.getItems());         
         shopDto.setTotal(

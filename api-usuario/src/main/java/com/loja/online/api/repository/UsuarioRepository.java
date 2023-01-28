@@ -10,6 +10,6 @@ import com.loja.online.api.model.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long >{
-    Usuario findByCpf(String cpf);
+    Usuario findByCpfAndChave(String cpf, String chave);
     List<Usuario> queryByNomeLike(String nome);
 }

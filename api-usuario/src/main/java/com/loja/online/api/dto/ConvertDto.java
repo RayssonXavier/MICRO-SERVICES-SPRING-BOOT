@@ -13,7 +13,7 @@ public class ConvertDto{
         usuarioDto.setEndereco(usuario.getEndereco());
         usuarioDto.setNome(usuario.getNome());
         usuarioDto.setTelefone(usuario.getTelefone());
-
+        usuarioDto.setChave(usuario.getChave());
         return usuarioDto;
     }
 }

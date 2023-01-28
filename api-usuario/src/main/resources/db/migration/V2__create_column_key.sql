@@ -1,0 +1,1 @@
+alter table usuarios.usuario add column chave varchar(100);
