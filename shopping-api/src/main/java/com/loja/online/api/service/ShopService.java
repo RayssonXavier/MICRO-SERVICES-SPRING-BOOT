@@ -1,8 +1,8 @@
 package com.loja.online.api.service;
 
-import java.time.Clock;
+
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +16,7 @@ import com.loja.online.api.dto.ShopDto;
 import com.loja.online.api.exceptions.UsuarioNotFoundException;
 import com.loja.online.api.model.Shop;
 import com.loja.online.api.repository.ShopRepository;
-import com.shopping.client.DTO.ProdutoDto;
+
 
 @Service
 public class ShopService {
@@ -61,7 +61,7 @@ public class ShopService {
                 shopDto.getItems().stream().map(item -> item.getPreco()).reduce(Float.intBitsToFloat(0), Float::sum));
         Shop shop = Shop.convert(shopDto);
         shop.setData(LocalDate.now());
-        shop.setHoras(LocalTime.now());
+        shop.setHoras(LocalTime.now().toString());
         shop = this.repository.save(shop);
 
         return ShopDto.convert(shop);

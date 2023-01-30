@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.loja.online.api</groupId>
 	<artifactId>api-produtos</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>api-produtos</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>

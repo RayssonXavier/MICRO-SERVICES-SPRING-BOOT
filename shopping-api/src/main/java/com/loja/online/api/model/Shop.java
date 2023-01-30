@@ -1,8 +1,6 @@
 package com.loja.online.api.model;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,7 +27,7 @@ public class Shop {
     private String identificadorUsuario;
     private float total;
     private LocalDate data;
-    private LocalTime horas;
+    private String horas;
     
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "item", 
@@ -41,6 +39,7 @@ public class Shop {
         shop.setData(shopDto.getData());
         shop.setIdentificadorUsuario(shopDto.getIdentificadorUsuario());
         shop.setTotal(shopDto.getTotal());
+        shop.setHoras(shopDto.getHoras());
         shop.setItems(
             shopDto.getItems()
             .stream().map(Item::convert)

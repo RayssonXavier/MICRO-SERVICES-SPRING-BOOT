@@ -1,6 +1,7 @@
 package com.loja.online.api.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -18,9 +19,11 @@ public class ProdutoService {
     @Autowired
     Gson gson;
 
+    @Value("${PRODUTO_API: http://localhost:8081/produto/ }")
+    String produtoApi;
     public ProdutoDto obterProdutoPorIdentificador(String identificador) {
         try {
-            var url = "http://localhost:8081/produto/identificador/"+identificador;
+            var url = this.produtoApi+"identificador/"+identificador;
             var resposnse = this.restTemplate.getForEntity(url, ProdutoDto.class);
             return resposnse.getBody();
         } catch (HttpClientErrorException e) {

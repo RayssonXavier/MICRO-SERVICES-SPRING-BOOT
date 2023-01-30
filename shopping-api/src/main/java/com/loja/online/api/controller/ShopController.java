@@ -4,7 +4,6 @@ import com.loja.online.api.dto.ShopDto;
 import com.loja.online.api.exceptions.UsuarioNotFoundException;
 import com.loja.online.api.service.ShopService;
 import com.loja.online.api.service.UsuarioService;
-import com.shopping.client.DTO.UsuarioDto;
 
 import java.time.LocalDate;
 import java.util.List;
